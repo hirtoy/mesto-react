@@ -31,8 +31,8 @@ function EditAvatarPopup(props) {
                     name="avatar"
                     type="url"
                     placeholder="Ссылка на аватарку"
-                    required 
-                    ref={avatarUrl}/>
+                    required
+                    ref={avatarUrl} />
                 <span className="popup__form-error avatar-input-error"
                     id="popup__form-avatar_place-url">ошибка заполнения</span>
             </label>

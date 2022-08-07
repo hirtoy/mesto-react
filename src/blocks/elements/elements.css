@@ -13,6 +13,7 @@
 	.elements {
 		grid-template-columns: repeat(2, 282px);
 		padding-bottom: 66px;
+		display: grid;
 	}
 }
 

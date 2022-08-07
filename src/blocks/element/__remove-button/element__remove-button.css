@@ -10,6 +10,10 @@
 	cursor: pointer;
 }
 
+.element__remove-button_hidden {
+display: none;
+}
+
 .element__remove-button:hover {
 	opacity: 0.6;
 }

@@ -23,10 +23,11 @@ function AddPlacePopup(props) {
     return (
         <PopupWithForm
             title="Новое место"
-            name="add" isOpen={props.isOpen}
+            name="add" 
+            isOpen={props.isOpen}
             onClose={props.onClose}
             onSubmit={handleSubmit}
-            buttonText="Сохранить">
+            buttonText="Создать">
 
             <label className="popup__field">
                 <input className="popup__form-item popup__form-item_place_elements popup__form-item_value_place-name"
@@ -36,11 +37,10 @@ function AddPlacePopup(props) {
                     placeholder="Название"
                     required
                     minLength="2"
-                    maxLength="30" 
+                    maxLength="30"
                     value={name}
                     onChange={handleChangeName}/>
-                <span className="popup__form-error title-input-error"
-                    id="popup__form-item_place-name">ошибка заполнения</span>
+                <span className="popup__form-error" id="title-input-error">Ошибка заполнения</span>
             </label>
 
             <label className="popup__field">
@@ -49,11 +49,10 @@ function AddPlacePopup(props) {
                     name="link"
                     type="url"
                     placeholder="Ссылка на картинку"
-                    required 
+                    required
                     value={link}
                     onChange={handleChangeLink}/>
-                <span className="popup__form-error link-input-error"
-                    id="popup__form-item_place-url">ошибка заполнения</span>
+                <span className="popup__form-error" id="link-input-error">Ошибка заполнения</span>
             </label>
         </PopupWithForm>
     );

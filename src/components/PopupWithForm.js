@@ -10,7 +10,7 @@ function PopupWithForm(props) {
         //редактирование профиля
         <div className={`popup popup_type_${props.name} ${props.isOpen && 'popup_visible'}`} onClick={handleOverlayClick}>
             <div className="popup__window">
-                <form className="popup__form" name={`${props.name}-form`} onSubmit={props.onSubmit} noValidate>
+                <form className="popup__form" name={`${props.name}`} onSubmit={props.onSubmit} noValidate>
                     <h2 className="popup__heading">{props.title}</h2>
                     {props.children}
                     <button className="popup__button popup__submit-button" type="submit">{props.buttonText}</button>
