@@ -1,58 +1,58 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function AddPlacePopup(props) {
+function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
     const [name, setName] = React.useState('');
     const [link, setLink] = React.useState('');
 
-    function handleChangeName(e) { setName(e.target.value) };
-    function handleChangeLink(e) { setLink(e.target.value) };
+    function handleChangeName(name) { setName(name.target.value) };
+    function handleChangeLink(link) { setLink(link.target.value) };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        props.onAddPlace({ name, link });
+    function handleSubmit(event) {
+        event.preventDefault();
+        onAddPlace({name, link});
     }
 
     React.useEffect(
         () => {
             setName('');
             setLink('');
-        }, [props.isOpen]
+        }, [isOpen]
     );
 
     return (
         <PopupWithForm
             title="Новое место"
             name="add" 
-            isOpen={props.isOpen}
-            onClose={props.onClose}
+            isOpen={isOpen}
+            onClose={onClose}
             onSubmit={handleSubmit}
             buttonText="Создать">
 
             <label className="popup__field">
                 <input className="popup__form-item popup__form-item_place_elements popup__form-item_value_place-name"
-                    id="title-input"
-                    name="name"
+                    id="titleinput"
+                    name="titleinput"
                     type="text"
                     placeholder="Название"
-                    required
                     minLength="2"
                     maxLength="30"
                     value={name}
-                    onChange={handleChangeName}/>
-                <span className="popup__form-error" id="title-input-error">Ошибка заполнения</span>
+                    onChange={handleChangeName}
+                    required/>
+                <span className="popup__form-error titleinput-error"></span>
             </label>
 
             <label className="popup__field">
                 <input className="popup__form-item popup__form-item_place_elements popup__form-item_value_place-url"
-                    id="link-input"
-                    name="link"
+                    id="linkinput"
+                    name="linkinput"
                     type="url"
                     placeholder="Ссылка на картинку"
-                    required
                     value={link}
-                    onChange={handleChangeLink}/>
-                <span className="popup__form-error" id="link-input-error">Ошибка заполнения</span>
+                    onChange={handleChangeLink}
+                    required/>
+                <span className="popup__form-error linkinput-error"></span>
             </label>
         </PopupWithForm>
     );

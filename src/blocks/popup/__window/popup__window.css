@@ -1,11 +1,14 @@
 .popup__window {
-    width: 430px;
-    padding-top: 34px;
-    position: fixed;
-    bottom: 50%;
-    right: 50%;
-    transform: translate(50%,50%);
+    max-width: 430px;
+    width: 100%;
     background-color: #fff;
-    border-radius: 10px;
-    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 12px;
+    position: relative;
+}
+@media screen and (max-width: 550px) {
+    .popup__window {
+      max-width: 282px;
+      min-height: 322px;
+    }
 }

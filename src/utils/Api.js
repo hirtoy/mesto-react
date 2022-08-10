@@ -34,7 +34,7 @@ class mestoApi {
             })
         }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     // обновление фото пользоателя
@@ -48,7 +48,7 @@ class mestoApi {
             })
         }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
 
@@ -60,7 +60,7 @@ class mestoApi {
             headers: this._headers
         }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     //создаём новую карточку
@@ -75,7 +75,7 @@ class mestoApi {
             })
         }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     like(_id) {
@@ -83,7 +83,7 @@ class mestoApi {
             method: 'PUT',
             headers: this._headers
         })
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     dislike(_id) {
@@ -91,7 +91,7 @@ class mestoApi {
             method: 'DELETE',
             headers: this._headers
         })
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
 
@@ -102,7 +102,7 @@ class mestoApi {
             headers: this._headers
         }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     //обновляем статус карточки
@@ -123,7 +123,7 @@ class mestoApi {
                 headers: this._headers
             }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 
     //снять лайк с карточки
@@ -135,7 +135,7 @@ class mestoApi {
                 headers: this._headers
             }
         )
-            .then((res) => this._checkResponse(res));
+            .then(res => this._checkResponse(res));
     }
 }
 
